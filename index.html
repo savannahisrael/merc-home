@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mountain Rose Herbs Mercantile 2022</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header id="top-header">
+      <div id="header-col-left">
+        <nav>
+            <div class="navigation">
+                <div class="nav-toggler"></div>
+                <ul class="nav-items">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">EXPERIENCE</a></li>
+                    <li><a href="#">LOCATION</a></li>
+                    <li><a href="#">OUR STAFF</a></li>
+                    <li><a href="#">EVENTS CALENDAR</a></li>
+                </ul>
+            </div>
+        </nav>
+      </div>
+      <div id="header-col-middle">
+        <img id="header-logo-img" src="https://cdn11.bigcommerce.com/s-c0d5nzsjp4/images/stencil/original/image-manager/mercantile-logo-darkgreen-blkoutline.png" alt="Mountain Rose Herbs Mercantile Logo" />
+      </div>
+      <div id="header-col-right"></div>
+    </header>
+    <header id="min-header"></header>
+    <div id="home-hero">
+        <img class="home-hero-img" src="https://cdn11.bigcommerce.com/s-c0d5nzsjp4/images/stencil/original/image-manager/mercantile-1-min.png" alt="Interior Shot of Mountain Rose Herbs Mercantile in downtown Eugene Oregon" />
+    </div>
+    <div id="home-s2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        
+        var windowHeight = $(window).height();
+        var headerHeroHeight = windowHeight + 200;
+        // console.log(windowHeight);
+        // console.log(headerHeroHeight);
+
+        var windowWidth = $(window).width();
+        console.log(windowWidth);
+        var heroImgWidth = windowWidth * 0.76;
+        console.log(heroImgWidth);
+        var widthToHeaderScrollHeight = heroImgWidth * 0.62;
+        console.log(widthToHeaderScrollHeight);
+        var minHeaderScrollHeight = widthToHeaderScrollHeight + 300;
+        console.log(minHeaderScrollHeight);
+        
+        $(function () {
+          var header = $("#min-header"),
+            // headerImg = $("#header-logo-img"),
+            yOffset = 0,
+            triggerPoint = widthToHeaderScrollHeight;
+          $(window).scroll(function () {
+            yOffset = $(window).scrollTop();
+
+            if (yOffset >= triggerPoint) {
+              header.addClass("display-min-header");
+            } else {
+              header.removeClass("display-min-header");
+            }
+          });
+        });
+
+        let navWrapper = $("#header-col-left"),
+            navToggler = $(".nav-toggler");
+
+            navToggler.click(function(){
+                navWrapper.toggleClass("active");
+            });
+
+
+        $(function scrolly(){
+            var lastScroll = 0;
+            $(window).scroll(function(event){
+                var st = $(this).scrollTop();
+
+                if (st > lastScroll){
+                    $("#min-header").addClass("fixedAtTop");
+                }
+                else {
+                    $("#min-header").removeClass("fixedAtTop");
+                }
+                lastScroll = st;
+            });
+            $("#min-header").hover(function(){
+                $(this).removeClass("fixedAtTop");
+            });
+        });
+
+
+      });
+    </script>
+  </body>
+</html>
