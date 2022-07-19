@@ -19554,6 +19554,10 @@ body.compensate-for-scrollbar {
     margin-bottom: 6rem;
     position: relative;
   }
+  .Video {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
   @media (min-width: 768px) {
     .Section {
       margin-top: 11.11111vw;
@@ -19787,9 +19791,9 @@ body.compensate-for-scrollbar {
   }
   .SiteHeader-brand {
       position: absolute;
-      left: 50%;
-      transform: translate(-50%);
-      top: 1rem;
+      left: 49%;
+      transform: translate(-49%);
+      top: 0.5rem;
   }
   .SiteHeader-brand,
   .SiteHeader-menuToggle {
@@ -19828,7 +19832,7 @@ body.compensate-for-scrollbar {
   }
   @media (min-width: 768px) {
     a.SiteHeader-logo svg {
-      height: 175px;
+      height: 180px;
     }
   }
   a.SiteHeader-logo svg .Logo-art {
@@ -19927,7 +19931,7 @@ body.compensate-for-scrollbar {
     transform: translateY(4px);
   }
   .SiteHeader-menuLabel {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     overflow: hidden;
     width: 4rem;
     text-align: left;
